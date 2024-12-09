@@ -13,16 +13,9 @@ public class Product
 	private String model;
 	
 	
-	public Product(String productID, String manufacturerName, String manufacturerID, String model, double salesPrice, double cost, double msrp)
+	public Product()
 	{
-		this.productID = productID;
-		this.manufacturerName = manufacturerName;
-		this.manufacturerID = manufacturerID;
-		this.model = model;
 		
-		this.salesPrice = salesPrice;
-		this.cost = cost;
-		this.msrp = msrp;
 	}
 
 
