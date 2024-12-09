@@ -52,7 +52,7 @@ public class SimpleProduct extends Product
 	 * Returns the highest value of either 'salesPrice * (1 - MAXIMUMDISCOUNTMARGIN)' or the cost field, 
 	 * depending on whichever is higher.
 	 *
-	 * @return the value of the salesPrice field of a Product
+	 * @return the highest value of either the cost field of the product or the salesPrice field of the product * (1 - MAXIMUMDISCOUNTMARGIN)
 	 */
 	@Override
 	public double getMinimumPrice()
