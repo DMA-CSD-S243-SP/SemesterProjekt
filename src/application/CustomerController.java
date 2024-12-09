@@ -11,7 +11,6 @@ public class CustomerController {
 	
 	
 	public Customer findCustomerByPhone(String phone) {
-		Customer customer = CustomerContainer.findCustomerByPhone(phone);
-		return customer;
+		return CustomerContainer.findCustomerByPhone(phone);
 	}
 }
