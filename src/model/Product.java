@@ -1,34 +1,25 @@
 package model;
 
 
-public class Product
+public abstract class Product
 {
-	private double salesPrice;
-	private double cost;
-	private double msrp;
-	
 	private String productID;
-	private String manufacturerName;
-	private String manufacturerID;
 	private String model;
 	
+
+	/**
+	 * 
+	 */
+	public Product() {
+		
+	}
+
+	/** 
+	 * Accessor for the full price of a product
+	 * @return The price at which the product is to be sold (before customer discounts)
+	 */
+	public abstract double getPrice();
+
 	
-	public Product()
-	{
-		
-	}
-
-
-	public double getPrice()
-	{
-		
-		return 0.0;
-	}
-
-	
-	public double getMinimumPrice()
-	{
-		
-		return 0.0;
-	}
+	public abstract double getMinimumPrice();
 }
