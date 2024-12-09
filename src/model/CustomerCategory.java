@@ -20,12 +20,12 @@ public class CustomerCategory
 	
 	
 	/**
-	 * Constructs a CompositeLine instance with the specified quantity and product.
+	 * Constructs a CustomerCategory instance with the specified isLocked, discount and description.
 	 *
-	 * Initializes a new CompositeLine object with the given quantity and associated product.
-	 * The quantity represents the number of items, and the lineProduct represents the product associated with this line.
+	 * Initializes a new CustomerCategory object with the given isLocked, discount and description.
+	 * isLocked determines if the category is locked for use, discount is the discount which is associated with a category and description is a short text about the category.
 	 *
-	 * @param isLocked    			- 
+	 * @param isLocked    			- determines if anymore customer can join the category
 	 * @param discount  			- the discount associated with the category
 	 * @param description 			- The description of the category
 	 */
