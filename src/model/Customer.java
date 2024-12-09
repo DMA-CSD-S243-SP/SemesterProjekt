@@ -13,14 +13,8 @@ public class Customer {
 	private CustomerCategory category;
 	
 	
-public Customer(String name, String address, String phone, String mailAddress, double discount, List<Order> orderList, CustomerCategory category) {	
-	this.name = name;
-	this.address = address;
-	this.phone = phone;
-	this.mailAddress = mailAddress;
-	this.discount = discount;
+public Customer() {	
 	this.orderList = new ArrayList<>();
-	this.category = category;
 }
 
 
