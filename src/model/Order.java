@@ -2,7 +2,6 @@ package model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-//import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,16 +45,28 @@ public class Order
 	public double getTotal()
 	{
 		double sum = 0;
-		for(Order orderLine : orderLineList)
+		for (OrderLine orderLine : orderLineList)
 		{
-			sum = sum + orderLine.getPrice
+			sum = sum + orderLine.getSubTotal();
 		}
+		
+		if(getMinimumTotal() > sum) 
+		{
+			sum = getMinimumTotal();
+		}
+		
+		return sum;
 	}
 	
 	
 	private double getMinimumTotal()
 	{
-		
+		double sum = 0;
+		for (OrderLine orderLine : orderLineList)
+		{
+			sum = sum + orderLine.getMinimumSubtotal();
+		}
+		return sum;
 	}
 	
 	

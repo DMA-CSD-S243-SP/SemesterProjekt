@@ -26,13 +26,13 @@ public class OrderLine
 	}
 	
 
-	public void setP(Product product)
+	public void setProduct(Product product)
 	{
 		this.product = product; 
 	}
 	
 	
-	public double getSubtotal()
+	public double getSubTotal()
 	{
 		return quantity * product.getPrice();
 	}
