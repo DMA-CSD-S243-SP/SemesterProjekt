@@ -6,9 +6,12 @@ import model.OrderContainer;
 import model.OrderLine;
 import model.Product;
 
+/**
+ * Class responsible for interactions with OrderContainer, Order, and OrderLine classes and instances.
+ */
 public class OrderController
 {
-	private Order o;
+	private Order order;
 	
 	/**
 	 * Constuctor for OrderController instances.
@@ -21,7 +24,7 @@ public class OrderController
 	 * Creates an empty order, and stores it locally.
 	 */
 	public void makeNewOrder() {
-		o = new Order();
+		order = new Order();
 		
 	}
 	
@@ -31,9 +34,9 @@ public class OrderController
 	 * @return the customer that the phonenumber corresponds to.
 	 */
 	public Customer addCustomerByPhoneNumber(String phone) {
-		Customer c = new CustomerController().findCustomerByPhone(phone);
-		o.setCustomer(c);
-		return c;
+		Customer customer = new CustomerController().findCustomerByPhone(phone);
+		order.setCustomer(customer);
+		return customer;
 	}
 	
 	/**
@@ -44,19 +47,19 @@ public class OrderController
 	 * @throws nullPointerException if given productID doesn't match any Product in the system.
 	 */
 	public double enterProduct(String productID, int quantity) {
-		OrderLine ol = new OrderLine();
-		Product p = new ProductController().findProductByID(productID); // Throws null pointer if Product isn't found.
-		ol.setProduct(p);
-		ol.setQuantity(quantity);
-		o.addOrderLine(ol);
-		return o.getTotal();
+		OrderLine orderLine = new OrderLine();
+		Product product = new ProductController().findProductByID(productID); // Throws null pointer if Product isn't found.
+		orderLine.setProduct(product);
+		orderLine.setQuantity(quantity);
+		order.addOrderLine(orderLine);
+		return order.getTotal();
 	}
 	
 	/**
-	 * Adds the current order to the OrderContainer. Clears o as an ecapsulation measure.
+	 * Adds the current order to the OrderContainer. Clears order as an ecapsulation measure.
 	 */
 	public void endSale() {
-		OrderContainer.addOrder(o);
-		o = null;
+		OrderContainer.addOrder(order);
+		order = null;
 	}
 }
