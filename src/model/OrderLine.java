@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * Write a description of class RentController here.
+ *
+ * @author Line Bertelsen
+ * @version 0.0.1 initial draft version
+ */
+
 
 public class OrderLine
 {
