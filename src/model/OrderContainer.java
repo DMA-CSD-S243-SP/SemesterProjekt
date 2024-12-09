@@ -11,6 +11,7 @@ public class OrderContainer {
 
 
 	public static void addOrder(Order o) {
-		
+		int orderNo = o.getOrderNo();
+		ordersByNo.put(orderNo, o);
 	}
 }
