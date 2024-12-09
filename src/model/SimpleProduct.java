@@ -14,8 +14,7 @@ public class SimpleProduct extends Product{
 	 */
 	@Override
 	public double getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return salesPrice;
 	}
 	
 	/**
