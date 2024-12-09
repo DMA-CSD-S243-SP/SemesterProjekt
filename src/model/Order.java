@@ -41,4 +41,26 @@ public class Order
 	{
 		orderLineList.add(orderLine);		
 	}
+	
+	
+	public double getTotal()
+	{
+		double sum = 0;
+		for(Order orderLine : orderLineList)
+		{
+			sum = sum + orderLine.getPrice
+		}
+	}
+	
+	
+	private double getMinimumTotal()
+	{
+		
+	}
+	
+	
+	public int getOrderNo()
+	{
+		return orderNo;
+	}
 }
