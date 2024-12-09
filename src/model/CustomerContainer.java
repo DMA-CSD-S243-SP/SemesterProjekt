@@ -1,8 +1,17 @@
 package model;
-
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Represents a Container for customers that includes a hashmap of customer and of Category
+ *
+ * The CustomerContainer class is a container which holds both customers and categories.
+ * 
+ * 
+ * @author Anders Have
+ * @version 09/12/2024 - 10:42
+ */
 public class CustomerContainer
 {
 	private static Customer anonymousCustomer = createAnonymous();
@@ -10,24 +19,50 @@ public class CustomerContainer
 	private static Map<String, CustomerCategory> categoriesByName = new HashMap<>();
 	
 	
+	/**
+	 * The Constructor is private because of the singleton pattern
+	 *
+	 * Initializes a new CustomerContainer object.
+	 */
 	private CustomerContainer()
 	{
 		
 	}
 	
 	
+	/**
+	 * creates a new Customer
+	 *
+	 * creates and returns a new customer.
+	 *
+	 * @return the new customer that was created
+	 */
 	private  static Customer createAnonymous()
 	{
 		return new Customer();
 	}
 	
 	
+	/**
+	 * Retrieves the anonymousCustomer field
+	 *
+	 * Returns the value of the 'anonymousCustomer' field, which is a customer.
+	 *
+	 * @return the anonymousCustomer field
+	 */
 	public Customer getAnonymous()
 	{
 		return anonymousCustomer;
 	}
 	
 	
+	/**
+	 * Retrieves the customer 
+	 *
+	 * Returns the value which the key(phone) is associated with from the HashMap customerByPhone.
+	 *
+	 * @return the value which the key(phone) is associated with.
+	 */
 	public static Customer findCustomerByPhone(String phone)
 	{
 		return customerByPhone.get(phone);
