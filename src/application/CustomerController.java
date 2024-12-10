@@ -15,10 +15,13 @@ import model.CustomerContainer;
 public class CustomerController {
 	
 	
-	public CustomerController() {}
+	public CustomerController() 
+	{
+		
+	}
 	
 	/**
-	 * The findCustomerByPhone method finds a customer based on their phone number.
+	 * The findCustomerByPhone() method finds a customer based on their phone number.
 	 * 
 	 * It delegates the actual search to the CustomerContainer class
 	 * and ensures the controller does not handle data storage directly. 
@@ -27,7 +30,8 @@ public class CustomerController {
 	 * @return customer	 - Customer object that match the given phone number
 	 * 					   or return null if no customer is found.
 	 */
-	public Customer findCustomerByPhone(String phone) {
+	public Customer findCustomerByPhone(String phone) 
+	{
 		return CustomerContainer.findCustomerByPhone(phone);
 	}
 }
