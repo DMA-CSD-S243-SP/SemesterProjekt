@@ -2,6 +2,12 @@ package model;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Represent a customer and what information it holds. 
+ *
+ * @author Daniel Kryhlmand, Line Bertelsen
+ * @version 10/12/2024 - 13:00
+ */
 
 public class Customer {
 	private String name;
@@ -12,13 +18,21 @@ public class Customer {
 	private List<Order> orderList;
 	private CustomerCategory category;
 	
+	/**
+	 * Constructor initializes the order with an empty list of orderList.
+	 */
+	public Customer() 
+	{	
+		this.orderList = new ArrayList<>();
+	}
 	
-public Customer() {	
-	this.orderList = new ArrayList<>();
-}
-
-
-public double getDiscount() {
-	return discount;
-}
+	/**
+	 * The getDiscount method retrieves the current discount value.
+	 * 
+	 * @return the current discount value as a double.
+	 */
+	public double getDiscount() 
+	{
+		return discount;
+	}
 }
