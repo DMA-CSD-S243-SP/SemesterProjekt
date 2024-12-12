@@ -9,8 +9,9 @@ public abstract class InputHandler
 	private InputHandler()
 	{
 	}
-	
-	public static String getInput() {
+
+	public static String getInput()
+	{
 		return input.nextLine();
 	}
 }

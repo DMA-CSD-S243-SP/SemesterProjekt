@@ -7,21 +7,18 @@ package model;
  * @version 09/12/2024 - 17.30
  */
 
-
 public class OrderLine
 {
 	private int quantity;
 	private Product product;
-	
-	
-	public OrderLine() 
+
+	public OrderLine()
 	{
-		
+
 	}
-		
-	
+
 	/**
-	 * The setQuantity method sets the quantity for this order line. 
+	 * The setQuantity method sets the quantity for this order line.
 	 * 
 	 * @param quantity of the product
 	 */
@@ -29,34 +26,32 @@ public class OrderLine
 	{
 		this.quantity = quantity;
 	}
-	
-	
+
 	/**
 	 * The setProduct method set the product for this order line.
 	 * 
-	 * @param product 
+	 * @param product
 	 */
 	public void setProduct(Product product)
 	{
-		this.product = product; 
+		this.product = product;
 	}
-	
-	
+
 	/**
-	 * The getSubTotal method calculates the subtotal based on the products price. 
+	 * The getSubTotal method calculates the subtotal based on the products price.
 	 * 
-	 * @return the subtotal of this order line. 
+	 * @return the subtotal of this order line.
 	 */
 	public double getSubTotal()
 	{
 		return quantity * product.getPrice();
 	}
-	
-	
+
 	/**
-	 * The getMinimumSubtotal method calculates the minimum subtotal based on the products minimum price. 
+	 * The getMinimumSubtotal method calculates the minimum subtotal based on the
+	 * products minimum price.
 	 * 
-	 * @return the minimum subtotal for this order line. 
+	 * @return the minimum subtotal for this order line.
 	 */
 	public double getMinimumSubtotal()
 	{

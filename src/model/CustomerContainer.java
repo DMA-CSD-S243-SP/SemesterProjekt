@@ -1,12 +1,14 @@
 package model;
+
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Represents a Container for customers that includes a hashmap of customer and of Category
+ * Represents a Container for customers that includes a hashmap of customer and
+ * of Category
  *
- * The CustomerContainer class is a container which holds both customers and categories.
+ * The CustomerContainer class is a container which holds both customers and
+ * categories.
  * 
  * 
  * @author Anders Have
@@ -17,7 +19,7 @@ public class CustomerContainer
 	private static Map<String, Customer> customerByPhone = new HashMap<>();
 	private static Map<String, CustomerCategory> categoriesByName = new HashMap<>();
 	private static Customer anonymousCustomer = createAnonymous();
-	
+
 	/**
 	 * The Constructor is private because of the singleton pattern
 	 *
@@ -25,10 +27,9 @@ public class CustomerContainer
 	 */
 	private CustomerContainer()
 	{
-		
+
 	}
-	
-	
+
 	/**
 	 * creates a new Customer
 	 *
@@ -36,14 +37,13 @@ public class CustomerContainer
 	 *
 	 * @return the new customer that was created
 	 */
-	private  static Customer createAnonymous()
+	private static Customer createAnonymous()
 	{
 		Customer anonymous = new Customer();
 		customerByPhone.put("", anonymous);
 		return anonymous;
 	}
-	
-	
+
 	/**
 	 * Retrieves the anonymousCustomer field
 	 *
@@ -55,12 +55,12 @@ public class CustomerContainer
 	{
 		return anonymousCustomer;
 	}
-	
-	
+
 	/**
-	 * Retrieves the customer 
+	 * Retrieves the customer
 	 *
-	 * Returns the value which the key(phone) is associated with from the HashMap customerByPhone.
+	 * Returns the value which the key(phone) is associated with from the HashMap
+	 * customerByPhone.
 	 *
 	 * @return the value which the key(phone) is associated with.
 	 */

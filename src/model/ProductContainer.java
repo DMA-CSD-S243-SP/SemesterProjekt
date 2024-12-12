@@ -1,12 +1,13 @@
 package model;
+
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Represents a Container  Products that includes a hashmap of Products
+ * Represents a Container Products that includes a hashmap of Products
  *
- * The CustomerContainer class is a container which holds both customers and categories.
+ * The CustomerContainer class is a container which holds both customers and
+ * categories.
  * 
  * 
  * @author Anders Have
@@ -15,8 +16,7 @@ import java.util.Map;
 public class ProductContainer
 {
 	private static Map<String, Product> productByID = new HashMap<>();
-	
-	
+
 	/**
 	 * The Constructor is private because of the singleton pattern
 	 *
@@ -24,14 +24,14 @@ public class ProductContainer
 	 */
 	private ProductContainer()
 	{
-		
+
 	}
-	
-	
+
 	/**
-	 * Retrieves the product 
+	 * Retrieves the product
 	 *
-	 * Returns the value which the key(productID) is associated with from the HashMap productByID.
+	 * Returns the value which the key(productID) is associated with from the
+	 * HashMap productByID.
 	 *
 	 * @return the value which the key(productID) is associated with.
 	 */
