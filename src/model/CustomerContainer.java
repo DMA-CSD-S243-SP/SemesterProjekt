@@ -14,10 +14,9 @@ import java.util.Map;
  */
 public class CustomerContainer
 {
-	private static Customer anonymousCustomer = createAnonymous();
 	private static Map<String, Customer> customerByPhone = new HashMap<>();
 	private static Map<String, CustomerCategory> categoriesByName = new HashMap<>();
-	
+	private static Customer anonymousCustomer = createAnonymous();
 	
 	/**
 	 * The Constructor is private because of the singleton pattern
@@ -39,7 +38,9 @@ public class CustomerContainer
 	 */
 	private  static Customer createAnonymous()
 	{
-		return new Customer();
+		Customer anonymous = new Customer();
+		customerByPhone.put("", anonymous);
+		return anonymous;
 	}
 	
 	
