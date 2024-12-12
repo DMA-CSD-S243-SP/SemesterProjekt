@@ -1,22 +1,28 @@
 package ui;
 
-import java.util.Scanner;
 import application.OrderController;
 import model.Customer;
 
 public class SaleUI extends Option
 {
+	// Text Config
+	final static String optionText = "Start Salg"; // The name of the option in menus
+	final static String phoneRequest = "Indtast kundens telefonnummer"; // The text used to request a phonenumber
+	final static String productAndExitRequest = "Registrer produkt, eller slut order ved"; //
+	final static String invalidNumber = "Antallet er ikke gyldigt";
+	final static String exitCode = "n";
+
+	OrderController orderControl;
 
 	public SaleUI()
 	{
-		super("Start salg");
+		super(optionText);
 	}
 
 	@Override
 	void runOption()
 	{
-		OrderController orderControl = new OrderController();
-		Scanner input = new Scanner(System.in);
+		orderControl = new OrderController();
 		// makeNewOrder
 		orderControl.makeNewOrder();
 
@@ -24,69 +30,102 @@ public class SaleUI extends Option
 		boolean isCustomerFound = false;
 		while (isCustomerFound == false)
 		{
-			System.out.println("\n\nIndtast kundens telefonnummer");
-
-			Customer foundCustomer;
-			String phone = input.nextLine();
-			try
-			{
-				foundCustomer = orderControl.addCustomerByPhoneNumber(phone);
-				isCustomerFound = true;
-				System.out.println("Customer Hash: " + foundCustomer); // Uses Customer.toString(). Returns hashcode,
-																		// should be changed.
-			} catch (NullPointerException exception)
-			{
-				System.out.println(exception.getMessage());
-			}
+			System.out.println("\n\n" + phoneRequest);
+			String phone = InputHandler.getInput();
+			isCustomerFound = tryAddCustomerByPhone(phone);
 		}
 
 		// enterProduct(productID, quantity)
 		boolean isDone = false;
 		while (isDone == false)
 		{
-			String exitCode = "n";
-			System.out.println("\n\nRegister produkt, eller slut order ved [" + exitCode + "]");
-			String productID = input.nextLine();
+			System.out.println("\n\n" + productAndExitRequest + "[" + exitCode + "]");
+			String productID = InputHandler.getInput();
 			if (productID.equals(exitCode)) // endSale
 			{
 				isDone = true;
 			}
 
-			int quantity = 0;
 			if (isDone == false)
 			{
-				while (quantity <= 0)
-				{
-					System.out.println("\n\nRegister antal");
-					String inputLine = input.nextLine();
-					if (inputLine.equals(""))
-					{
-						quantity = 1;
-					} else
-					{
-						try
-						{
-							quantity = Integer.parseInt(inputLine);
-						} catch (NumberFormatException exception)
-						{
-							System.out.println("Antallet er ikke gyldigt");
-						}
-					}
+				int quantity = inputQuantity();
+				tryEnterProduct(productID, quantity);
+			}
 
-				}
+		}
+
+		orderControl.endSale();
+		orderControl = null;
+	}
+
+	/**
+	 * Tries to add a customer to the Order, and prints either information about the
+	 * customer, or an error code.
+	 * 
+	 * @return true if a customer was added.
+	 */
+	private boolean tryAddCustomerByPhone(String phone)
+	{
+		try
+		{
+			Customer foundCustomer = orderControl.addCustomerByPhoneNumber(phone);
+			System.out.println("Customer Hash: " + foundCustomer); // Uses Customer.toString(). Returns hashcode,
+																	// should be changed.
+			return true;
+		} catch (NullPointerException exception)
+		{
+			System.out.println(exception.getMessage());
+			return false;
+		}
+	}
+
+	/**
+	 * Requests input until a valid quantity is given.
+	 * 
+	 * @return the quantity given.
+	 */
+	private int inputQuantity()
+	{
+		int quantity = 0;
+		while (quantity <= 0) // Retries if quantity hasn't been set yet, or has been set to a non-positive
+								// number
+		{
+			System.out.println("\n\nRegister antal");
+			String inputLine = InputHandler.getInput();
+			if (inputLine.equals("")) // Allows quick input of a single product, by hitting enter
+			{
+				quantity = 1;
+			} else
+			{
 				try
 				{
-					double total = orderControl.enterProduct(productID, quantity);
-					System.out.println("\n\nTotal: " + total);
-				} catch (NullPointerException exception)
+					quantity = Integer.parseInt(inputLine);
+				} catch (NumberFormatException exception)
 				{
-					System.out.println(exception.getMessage());
+					System.out.println(invalidNumber);
 				}
 			}
 
 		}
-		input.close();
-		orderControl.endSale();
+		return quantity;
 	}
 
+	/**
+	 * Tries to enter a product with it's quantity, prints total if succesful, and
+	 * an error message if not
+	 * 
+	 * @param productID
+	 * @param quantity
+	 */
+	private void tryEnterProduct(String productID, int quantity)
+	{
+		try
+		{
+			double total = orderControl.enterProduct(productID, quantity);
+			System.out.println("\n\nTotal: " + total);
+		} catch (NullPointerException exception)
+		{
+			System.out.println(exception.getMessage());
+		}
+	}
 }
