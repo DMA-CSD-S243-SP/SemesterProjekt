@@ -13,7 +13,7 @@ package model;
  * 
  * 
  * @author Lumière Schack & Christoffer Søndergaard
- * @version 09/12/2024 - 13:05
+ * @version 12/12/2024 - 22:50
  */
 public abstract class Product
 {
@@ -21,6 +21,7 @@ public abstract class Product
 	private String productID;
 	private String model;
 
+	
 	/**
 	 * Constructs a 'Product' instance, that cannot be instantiated on its own as it
 	 * is an abstract class.

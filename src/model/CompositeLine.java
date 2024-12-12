@@ -11,7 +11,7 @@ package model;
  * 
  * 
  * @author Christoffer Søndergaard
- * @version 09/12/2024 - 11:06
+ * @version 12/12/2024 - 22:50
  */
 public class CompositeLine
 {
@@ -21,6 +21,7 @@ public class CompositeLine
 	// Instance variables - Reference Types
 	private Product product;
 
+	
 	/**
 	 * Constructs a CompositeLine instance with the specified quantity and product.
 	 *

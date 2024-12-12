@@ -11,20 +11,24 @@ import java.util.List;
  * Represent a customers order, and holds multiple order lines. It provides
  * functions to calculate the total and minimum total cost of an order.
  *
- * @author Line Bertelsen
- * @version 09/12/2024 - 12:54
+ * @author Line Bertelsen & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:50
  */
 public class Order
 {
-	private List<OrderLine> orderLineList;
-	private LocalDate fillingData;
-	private LocalDate orderDate;
+	// Instance variables - Primitive Types
 	private int Status;
-	private double discount;
 	private int orderNo;
 	private static int count;
+	private double discount;
+	
+	// Instance variables - Reference Types
+	private LocalDate fillingData;
+	private LocalDate orderDate;	
 	private Customer customer;
-
+	private List<OrderLine> orderLineList;
+	
+	
 	/**
 	 * Constructor initializes the order with an empty list of orderLine.
 	 */

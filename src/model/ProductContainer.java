@@ -13,13 +13,15 @@ import java.util.Map;
  * categories.
  * 
  * 
- * @author Anders Have
- * @version 09/12/2024 - 11:23
+ * @author Anders Have & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:50
  */
 public class ProductContainer
 {
+	// Instance variables - Reference Types
 	private static Map<String, Product> productByID = new HashMap<>();
 
+	
 	/**
 	 * The Constructor is private because of the singleton pattern
 	 *

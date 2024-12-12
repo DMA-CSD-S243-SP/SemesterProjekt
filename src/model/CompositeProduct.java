@@ -15,12 +15,15 @@ import java.util.List;
  * 
  * 
  * @author Lumière Schack & Christoffer Søndergaard
- * @version 12/12/2024 - 22:38
+ * @version 12/12/2024 - 22:50
  */
 public class CompositeProduct extends Product
 {
-	private List<CompositeLine> compositeLineList;
+	// Instance variables - Primitive Types
 	private double discount;
+	
+	// Instance variables - Reference Types
+	private List<CompositeLine> compositeLineList;
 
 	
 	/**

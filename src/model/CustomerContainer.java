@@ -14,13 +14,16 @@ import java.util.Map;
  * categories.
  * 
  * 
- * @author Anders Have
- * @version 09/12/2024 - 10:42
+ * @author Anders Have & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:50
  */
 public class CustomerContainer
 {
+	// Instance variables - Reference Types
 	private static Map<String, Customer> customerByPhone = new HashMap<>();
 	private static Map<String, CustomerCategory> categoriesByName = new HashMap<>();
+	
+	
 	private static Customer anonymousCustomer = createAnonymous();
 
 	/**

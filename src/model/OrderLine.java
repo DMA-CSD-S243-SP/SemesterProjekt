@@ -5,14 +5,18 @@ package model;
 /**
  * Represent an order line containing a product and its quantity.
  *
- * @author Line Bertelsen
- * @version 09/12/2024 - 17:30
+ * @author Line Bertelsen & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:50
  */
 public class OrderLine
 {
+	// Instance variables - Primitive Types
 	private int quantity;
+	
+	// Instance variables - Reference Types
 	private Product product;
 
+	
 	public OrderLine()
 	{
 

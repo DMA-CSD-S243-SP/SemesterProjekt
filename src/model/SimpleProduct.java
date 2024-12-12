@@ -13,7 +13,7 @@ package model;
  * 
  * 
  * @author Lumière Schack & Christoffer Søndergaard
- * @version 09/12/2024 - 12:03
+ * @version 12/12/2024 - 22:50
  */
 public class SimpleProduct extends Product
 {
@@ -29,6 +29,7 @@ public class SimpleProduct extends Product
 	private String manufacturerName;
 	private String manufacturerID;
 
+	
 	/**
 	 * Retrieves the price of a product.
 	 * 

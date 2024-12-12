@@ -11,15 +11,19 @@ package model;
  * determines the discount they get when buying at the store.
  * 
  * 
- * @author Anders Have
- * @version 09/12/2024 - 10:05
+ * @author Anders Have & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:50
  */
 public class CustomerCategory
 {
-	private String name;
+	// Instance variables - Primitive Types
 	private boolean locked;
 	private double discount;
+	
+	// Instance variables - Reference Types
+	private String name;	
 	private String description;
+	
 
 	/**
 	 * Constructs a CustomerCategory instance with the specified isLocked, discount
