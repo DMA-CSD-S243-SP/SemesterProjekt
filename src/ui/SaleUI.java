@@ -3,6 +3,9 @@ package ui;
 import application.OrderController;
 import model.Customer;
 
+/**
+ * The option that handles the Make Sale use case
+ */
 public class SaleUI extends Option
 {
 	// Text Config
