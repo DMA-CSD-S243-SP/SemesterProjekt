@@ -3,6 +3,20 @@ package ui;
 import application.OrderController;
 import model.Customer;
 
+
+
+/**
+ * Represents the option in the user interface that handles the Make Sale use case.
+ *
+ * The SaleUI class models the behavior of the option that handles creating and registering 
+ * an order through the inputs supplied through interactions between the system and the user,
+ * eventually resulting in an order being persisted.
+ * 
+ * 
+ * @author Lumière Schack & Christoffer Søndergaard
+ * @version 12/12/2024 - 22:20
+ */
+
 /**
  * The option that handles the Make Sale use case
  */
