@@ -75,6 +75,8 @@ public class Order
 			sum = sum + orderLine.getSubTotal();
 		}
 		
+		sum = sum * (1-customer.getDiscount());
+		
 		//Ensure the total is at least the minimum total
 		if(getMinimumTotal() > sum) 
 		{
