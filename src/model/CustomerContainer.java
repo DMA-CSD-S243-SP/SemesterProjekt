@@ -15,7 +15,7 @@ import java.util.Map;
  * 
  * 
  * @author Anders Have & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 12/12/2024 - 23:06
  */
 public class CustomerContainer
 {
@@ -26,10 +26,15 @@ public class CustomerContainer
 	
 	private static Customer anonymousCustomer = createAnonymous();
 
+	
 	/**
-	 * The Constructor is private because of the singleton pattern
+	 * The constructor of this class is private, as it utilizes the singleton pattern.
 	 *
-	 * Initializes a new CustomerContainer object.
+	 * The constructor is used internally to initialize the singleton instance of the
+	 * CustomerContainer class, thereby ensuring that no external instantiation of this
+	 * class is possible.
+	 *
+	 * In order to access the single instance of the OrderContainer class, use getInstance().
 	 */
 	private CustomerContainer()
 	{

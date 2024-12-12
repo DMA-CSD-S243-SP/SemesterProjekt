@@ -10,7 +10,7 @@ import java.util.Map;
  * Represent a Container for orders what includes a hashmap.
  *
  * @author Daniel Kryhlmand, Line Bertelsen & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 12/12/2024 - 23:06
  */
 public class OrderContainer
 {
@@ -19,7 +19,13 @@ public class OrderContainer
 
 	
 	/**
-	 * Private constructor to prevent instantiation of this class.
+	 * The constructor of this class is private, as it utilizes the singleton pattern.
+	 *
+	 * The constructor is used internally to initialize the singleton instance of the
+	 * OrderContainer class, thereby ensuring that no external instantiation of this
+	 * class is possible.
+	 *
+	 * In order to access the single instance of the OrderContainer class, use getInstance().
 	 */
 	private OrderContainer()
 	{
