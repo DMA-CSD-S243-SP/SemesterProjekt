@@ -36,6 +36,7 @@ public class CustomerContainer
 
 	}
 
+	
 	/**
 	 * creates a new Customer
 	 *
@@ -50,6 +51,7 @@ public class CustomerContainer
 		return anonymous;
 	}
 
+	
 	/**
 	 * Retrieves the anonymousCustomer field
 	 *
@@ -62,6 +64,7 @@ public class CustomerContainer
 		return anonymousCustomer;
 	}
 
+	
 	/**
 	 * Retrieves the customer
 	 *

@@ -34,6 +34,7 @@ public class Customer
 		this.orderList = new ArrayList<>();
 	}
 
+	
 	/**
 	 * The getDiscount method retrieves the current discount value.
 	 * 

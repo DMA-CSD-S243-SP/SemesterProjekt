@@ -38,6 +38,7 @@ public class CompositeLine
 		this.product = lineProduct;
 	}
 
+	
 	/**
 	 * Retrieves the quantity.
 	 *
@@ -51,6 +52,7 @@ public class CompositeLine
 		return this.quantity;
 	}
 
+	
 	/**
 	 * Retrieves the product associated with this instance.
 	 *

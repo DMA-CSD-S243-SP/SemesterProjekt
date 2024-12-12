@@ -45,6 +45,7 @@ public class CustomerCategory
 		this.description = description;
 	}
 
+	
 	/**
 	 * Retrieves if the category is locked.
 	 *
@@ -58,6 +59,7 @@ public class CustomerCategory
 		return locked;
 	}
 
+	
 	/**
 	 * Retrieves the discount.
 	 *
@@ -71,6 +73,7 @@ public class CustomerCategory
 		return discount;
 	}
 
+	
 	/**
 	 * Retrieves the description.
 	 *

@@ -22,6 +22,7 @@ public class OrderLine
 
 	}
 
+	
 	/**
 	 * The setQuantity method sets the quantity for this order line.
 	 * 
@@ -32,6 +33,7 @@ public class OrderLine
 		this.quantity = quantity;
 	}
 
+	
 	/**
 	 * The setProduct method set the product for this order line.
 	 * 
@@ -42,6 +44,7 @@ public class OrderLine
 		this.product = product;
 	}
 
+	
 	/**
 	 * The getSubTotal method calculates the subtotal based on the products price.
 	 * 
@@ -52,6 +55,7 @@ public class OrderLine
 		return quantity * product.getPrice();
 	}
 
+	
 	/**
 	 * The getMinimumSubtotal method calculates the minimum subtotal based on the
 	 * products minimum price.

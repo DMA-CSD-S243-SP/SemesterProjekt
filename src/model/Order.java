@@ -37,6 +37,7 @@ public class Order
 		orderLineList = new ArrayList<>();
 	}
 
+	
 	/**
 	 * Links a customer to the current 'Order' object.
 	 * 
@@ -47,6 +48,7 @@ public class Order
 		this.customer = customer;
 	}
 
+	
 	/**
 	 * Adds an 'orderLine' to orderLineList.
 	 * 
@@ -56,6 +58,7 @@ public class Order
 	{
 		orderLineList.add(orderLine);
 	}
+	
 
 	/**
 	 * Calculates the total cost of the order.
@@ -88,6 +91,7 @@ public class Order
 		return sum;
 	}
 
+	
 	/**
 	 * The getMinimumTotal method calculates the minimum total of the order.
 	 * 
@@ -103,6 +107,7 @@ public class Order
 		return sum;
 	}
 
+	
 	/**
 	 * Retrieves the unique order number for this order.
 	 * 

@@ -35,6 +35,7 @@ public abstract class Product
 
 	}
 
+	
 	/**
 	 * Retrieves the price at which a product is to be sold at, before customer
 	 * discounts are factored in.
@@ -50,6 +51,7 @@ public abstract class Product
 	 */
 	public abstract double getPrice();
 
+	
 	/**
 	 * Retrieves the minimum price of a product.
 	 * 

@@ -45,6 +45,7 @@ public class SimpleProduct extends Product
 		return salesPrice;
 	}
 
+	
 	/**
 	 * Retrieves the minimum price of a product.
 	 * 
