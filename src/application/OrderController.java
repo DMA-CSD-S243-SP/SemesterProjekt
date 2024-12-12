@@ -35,6 +35,9 @@ public class OrderController
 	 */
 	public Customer addCustomerByPhoneNumber(String phone) {
 		Customer customer = new CustomerController().findCustomerByPhone(phone);
+		if (customer == null) {
+			throw new NullPointerException("Customer not found");
+		}
 		order.setCustomer(customer);
 		return customer;
 	}
@@ -48,7 +51,10 @@ public class OrderController
 	 */
 	public double enterProduct(String productID, int quantity) {
 		OrderLine orderLine = new OrderLine();
-		Product product = new ProductController().findProductByID(productID); // Throws null pointer if Product isn't found.
+		Product product = new ProductController().findProductByID(productID); // Returns null if productID doesn't match.
+		if (product == null) {
+			throw new NullPointerException("Product not found");
+		}
 		orderLine.setProduct(product);
 		orderLine.setQuantity(quantity);
 		order.addOrderLine(orderLine);
