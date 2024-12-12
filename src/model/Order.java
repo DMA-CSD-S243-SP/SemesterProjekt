@@ -1,17 +1,19 @@
+// Packages
 package model;
 
+// Imports
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Represent a customers order, and holds multiple order lines. It provides
  * functions to calculate the total and minimum total cost of an order.
  *
  * @author Line Bertelsen
- * @version 09/12/2024 - 12.54
+ * @version 09/12/2024 - 12:54
  */
-
 public class Order
 {
 	private List<OrderLine> orderLineList;

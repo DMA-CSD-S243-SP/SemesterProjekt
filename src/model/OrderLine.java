@@ -1,12 +1,13 @@
+// Packages
 package model;
+
 
 /**
  * Represent an order line containing a product and its quantity.
  *
  * @author Line Bertelsen
- * @version 09/12/2024 - 17.30
+ * @version 09/12/2024 - 17:30
  */
-
 public class OrderLine
 {
 	private int quantity;

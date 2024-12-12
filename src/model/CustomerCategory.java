@@ -1,4 +1,6 @@
+// Packages
 package model;
+
 
 /**
  * Represents a Category for customers that includes name of the category, the

@@ -1,7 +1,11 @@
+// Packages
 package model;
 
+// Imports
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class CompositeProduct extends Product
 {

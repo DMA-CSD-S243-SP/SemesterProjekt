@@ -1,7 +1,10 @@
+// Packages
 package model;
 
+// Imports
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
  * Represents a Container Products that includes a hashmap of Products

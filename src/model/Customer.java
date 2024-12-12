@@ -1,7 +1,10 @@
+// Packages
 package model;
 
+// Imports
 import java.util.List;
 import java.util.ArrayList;
+
 
 /**
  * Represent a customer and what information it holds.

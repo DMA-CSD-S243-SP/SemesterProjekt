@@ -1,4 +1,6 @@
+// Packages
 package model;
+
 
 /**
  * Represents a simple product, containing pricing and manufacturer details.

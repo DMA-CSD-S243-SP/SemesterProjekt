@@ -1,4 +1,6 @@
+// Packages
 package model;
+
 
 /**
  * Represents an abstract base class for a product, containing pricing details.

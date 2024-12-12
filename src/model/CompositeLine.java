@@ -1,4 +1,6 @@
+// Packages
 package model;
+
 
 /**
  * Represents a composite line that includes a quantity of a specific product.

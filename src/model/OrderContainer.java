@@ -1,7 +1,10 @@
+// Packages
 package model;
 
+// Imports
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
  * Represent a Container for orders what includes a hashmap.
@@ -9,7 +12,6 @@ import java.util.Map;
  * @author Daniel Kryhlmand, Line Bertelsen
  * @version 10/12/2024 - 13:30
  */
-
 public class OrderContainer
 {
 	private static Map<Integer, Order> ordersByNo = new HashMap<>();
