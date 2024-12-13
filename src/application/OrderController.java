@@ -9,6 +9,12 @@ import model.Product;
 /**
  * Class responsible for interactions with OrderContainer, Order, and OrderLine
  * classes and instances.
+ * 
+ * * It acts as a mediator between the higher-level application and the underlying
+ * data storage or business logic.
+ * 
+ *  * @author Lumière Schack
+ * @version 10/12/2024 - 13:45
  */
 public class OrderController
 {
@@ -36,6 +42,8 @@ public class OrderController
 	 * 
 	 * @param phone - the phone number of the customer
 	 * @return the customer that the phonenumber corresponds to.
+	 * @throws nullPointerException if given productID doesn't match any Product in
+	 *                              the system.
 	 */
 	public Customer addCustomerByPhoneNumber(String phone)
 	{
