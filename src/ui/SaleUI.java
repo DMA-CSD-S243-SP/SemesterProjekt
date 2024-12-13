@@ -3,8 +3,6 @@ package ui;
 import application.OrderController;
 import model.Customer;
 
-
-
 /**
  * Represents the option in the user interface that handles the Make Sale use case.
  *
@@ -23,31 +21,39 @@ import model.Customer;
 public class SaleUI extends Option
 {
 	// Text Config
-	final static String optionText = "Start Salg"; // The name of the option in menus
-	final static String phoneRequest = "Indtast kundens telefonnummer"; // The text used to request a phonenumber
-	final static String productAndExitRequest = "Registrer produkt, eller slut order ved"; //
-	final static String invalidNumber = "Antallet er ikke gyldigt";
+	// The name of the option in menus:
+	final static String optionText = "Start Salg";
+	// The text used to request a phonenumber:
+	final static String phoneRequest = "Indtast kundens telefonnummer";
+	// The text that requests a product id or an exit code. Note the exit code follows right after this statement:
+	final static String productAndExitRequest = "Registrer produkt, eller slut order ved";
+	// The code that needs to be typed in to end a sale:
 	final static String exitCode = "n";
+	// Error message when a non valid number is given:
+	final static String invalidNumber = "Antallet er ikke gyldigt";
+	// Error message for invalid customer:
+	final static String customerNotFound = "Ingen kunde er registreret med det nummer";
+	// Error message for invalid product:
+	final static String productNotFound = "Intet produkt er registreret med det ID"; 
 
 	OrderController orderControl;
 
 	public SaleUI()
 	{
-		super(optionText);
+		super(optionText); // All instances of SaleUI should have the same descriptive text.
 	}
 
-	
 	@Override
 	void runOption()
 	{
 		orderControl = new OrderController();
-		
+
 		// Operation contract: makeNewOrder
-		orderControl.makeNewOrder();
+		orderControl.makeNewOrder(); // The user input for makeNewOrder is selecting SaleUI
 
 		// Operation contract: addCustomerByPhone(phone)
 		boolean isCustomerFound = false;
-		
+
 		while (isCustomerFound == false)
 		{
 			System.out.println("\n\n" + phoneRequest);
@@ -55,16 +61,16 @@ public class SaleUI extends Option
 			isCustomerFound = tryAddCustomerByPhone(phone);
 		}
 
-		
 		// Operation contract: enterProduct(productID, quantity)
 		boolean isDone = false;
-		
+
 		while (isDone == false)
 		{
 			System.out.println("\n\n" + productAndExitRequest + "[" + exitCode + "]");
-			String productID = InputHandler.getInput();
-			
-			if (productID.equals(exitCode)) // endSale
+			String productID = InputHandler.getInput(); // This getInput handles 2 operations, by the use of an exit
+														// code.
+
+			if (productID.equals(exitCode)) // Operation contract: endSale
 			{
 				isDone = true;
 			}
@@ -80,7 +86,6 @@ public class SaleUI extends Option
 		orderControl = null;
 	}
 
-	
 	/**
 	 * Tries to add a customer to the Order, and prints either information about the
 	 * customer, or an error code.
@@ -96,14 +101,13 @@ public class SaleUI extends Option
 																	// should be changed.
 			return true;
 		}
-		
-		catch (NullPointerException exception)
+
+		catch (NullPointerException exception) // Gets thrown if phone number hasn't been mapped to a Customer
 		{
-			System.out.println(exception.getMessage());
+			System.out.println(customerNotFound);
 			return false;
 		}
 	}
-	
 
 	/**
 	 * Requests input until a valid quantity is given.
@@ -113,36 +117,36 @@ public class SaleUI extends Option
 	private int inputQuantity()
 	{
 		int quantity = 0;
-		
-		while (quantity <= 0) // Retries if quantity hasn't been set yet, or has been set to a non-positive number
+
+		while (quantity <= 0) // Retries if quantity hasn't been set yet, or has been set to a non-positive
+								// number
 		{
 			System.out.println("\n\nRegister antal");
 			String inputLine = InputHandler.getInput();
-			
+
 			if (inputLine.equals("")) // Allows quick input of a single product, by hitting enter
 			{
 				quantity = 1;
 			}
-			
+
 			else
 			{
 				try
 				{
 					quantity = Integer.parseInt(inputLine);
 				}
-				
-				catch (NumberFormatException exception)
+
+				catch (NumberFormatException exception) // Gets thrown if the String can't be converted to an int
 				{
 					System.out.println(invalidNumber);
 				}
 			}
 
 		}
-		
+
 		return quantity;
 	}
 
-	
 	/**
 	 * Tries to enter a product with it's quantity, prints total if succesful, and
 	 * an error message if not
@@ -157,10 +161,10 @@ public class SaleUI extends Option
 			double total = orderControl.enterProduct(productID, quantity);
 			System.out.println("\n\nTotal: " + total);
 		}
-		
-		catch (NullPointerException exception)
+
+		catch (NullPointerException exception) // Gets thrown if productID hasn't been mapped to a Product.
 		{
-			System.out.println(exception.getMessage());
+			System.out.println(productNotFound);
 		}
 	}
 }
