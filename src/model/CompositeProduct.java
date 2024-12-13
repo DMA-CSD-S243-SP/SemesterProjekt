@@ -10,10 +10,9 @@ import java.util.List;
  * CompositeProducts. A CompositeProduct object does not have a sales price of
  * its own. Instead it used the getPrice method recursively to calculate the
  * price whenever it's needed.
- * 
  *
  * @author Lumière Schack & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 13/12/2024 - 10:55
  */
 public class CompositeProduct extends Product
 {
