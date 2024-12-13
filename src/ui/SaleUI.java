@@ -1,5 +1,7 @@
+//Packages
 package ui;
 
+//Imports
 import application.OrderController;
 import model.Customer;
 
