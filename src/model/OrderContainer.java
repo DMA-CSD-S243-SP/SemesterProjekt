@@ -7,10 +7,14 @@ import java.util.Map;
 
 
 /**
- * Represent a Container for orders what includes a hashmap.
+ * Represents a container that 'Order' objects can be stored within and make them
+ * easily accessible by using the 'Order' object's unique order number field's
+ * value as the key used for retrieving said 'Order' objects stored within the collection.
+ * The collection utilizes a HashMap, and allows for easy adding of Orders through its 
+ * 'addOrder(order)' method.
  *
  * @author Daniel Kryhlmand, Line Bertelsen & Christoffer Søndergaard
- * @version 12/12/2024 - 23:06
+ * @version 13/12/2024 - 10:19
  */
 public class OrderContainer
 {
@@ -34,17 +38,21 @@ public class OrderContainer
 
 	
 	/**
-	 * The addOrder method adds an Order to the collection.
-	 * 
-	 * o.getOrderNo retrieves the order number from the Order object.
-	 * ordersByNo.put(orderNo, o) adds the Order to the map with its order number as
-	 * they key.
-	 * 
-	 * @param o the Order object to add the collection.
+	 * Adds an order to the HashMap collection of orders by their order number.
+	 *
+	 * The addOrder method retrieves the value stored in the 'orderNo' field of the
+	 * associated 'Order' object and adds that order to the collection which uses a 
+	 * HashMap and creates an association between the uniquely identifiable order number
+	 * and the specific 'Order' object stored at this location within the HashMap.
+	 *
+	 * @param Order - The 'Order' object to add to store within the OrderContainer's HashMap collection.
 	 */
-	public static void addOrder(Order o)
+	public static void addOrder(Order order)
 	{
-		int orderNo = o.getOrderNo();
-		ordersByNo.put(orderNo, o);
+		// Retrieves the uniquely identifiable order number of the 'Order' object and store it within the orderNo variable
+		int orderNo = order.getOrderNo();
+
+		// Adds an 'Order' object to the HashMap's collection forming an association to the order's uniquely identifiable order number
+		ordersByNo.put(orderNo, order);
 	}
 }
