@@ -1,5 +1,8 @@
 package ui;
 
+/**
+ * Example SubMenu
+ */
 public class SubMenu extends Option
 {
 
