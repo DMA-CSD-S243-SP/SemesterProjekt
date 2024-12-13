@@ -34,9 +34,9 @@ public class CustomerCategory
 	 * discount is the discount which is associated with a category and description
 	 * is a short text about the category.
 	 *
-	 * @param isLocked    - determines if anymore customer can join the category
-	 * @param discount    - the discount associated with the category
-	 * @param description - The description of the category
+	 * @param isLocked    - Determines if every employyee can add a customer to the category
+	 * @param discount    - Specifies the percentage of discount offered to customers of this category
+	 * @param description - The descriptive naming of this category
 	 */
 	public CustomerCategory(boolean isLocked, double discount, String description)
 	{
