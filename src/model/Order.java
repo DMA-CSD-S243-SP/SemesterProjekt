@@ -12,7 +12,7 @@ import java.util.List;
  * functions to calculate the total and minimum total cost of an order.
  *
  * @author Line Bertelsen & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 13/12/2024 - 10:54
  */
 public class Order
 {
@@ -30,7 +30,10 @@ public class Order
 	
 	
 	/**
-	 * Constructor initializes the order with an empty list of orderLine.
+	 * Constructs an Order instance with an empty list of 'OrderLine' objects.
+	 *
+	 * Initializes a new 'Order' object containing a collection in the form of
+	 * an ArrayList of elements of the 'OrderLine' type.
 	 */
 	public Order()
 	{
@@ -39,9 +42,11 @@ public class Order
 
 	
 	/**
-	 * Links a customer to the current 'Order' object.
+	 * Sets a 'Customer' object to be stored within this instance of the 'Order' object's
+	 * customer field, thereby creating an association between this 'Order' and the
+	 * 'Customer' object that is being pointed at in the memory.
 	 * 
-	 * @param customer -The customer who placed the order.
+	 * @param Customer - The customer who placed the order.
 	 */
 	public void setCustomer(Customer customer)
 	{
@@ -50,9 +55,10 @@ public class Order
 
 	
 	/**
-	 * Adds an 'orderLine' to orderLineList.
+	 * Adds an 'Orderline' object to be stored within this instance of the 'Order' object's
+	 * ArrayList collection.
 	 * 
-	 * @param orderLine
+	 * @param Orderline - The 'Orderline' object that should be added to this 'Order' instance.
 	 */
 	public void addOrderLine(OrderLine orderLine)
 	{
@@ -61,15 +67,14 @@ public class Order
 	
 
 	/**
-	 * Calculates the total cost of the order.
+	 * Calculates the total cost of all the products associated with this 'Order' instance.
 	 * 
-	 * The getTotal method iterates through the list of order lines
-	 * ('OrderLinesList'). and sums up the subtotals of all order lines to compute
-	 * the initial total.
+	 * The getTotal method iterates through the ArrayList collection containing 'OrderLine' objects, 
+	 * and adds each of the sub-totals together and returns a combined total cost for the entirety
+	 * of the order.
+	 * A minimum check is also added, to ensure that the price cannot fall below a set threshold.
 	 * 
-	 * If-statement ensure the total is at least the minimum total
-	 * 
-	 * @return total price of the order
+	 * @return Double - The total price of the entire order, after accounting for customer discount.
 	 */
 	public double getTotal()
 	{
@@ -93,25 +98,33 @@ public class Order
 
 	
 	/**
-	 * The getMinimumTotal method calculates the minimum total of the order.
+	 * Calculates the absolute minimum price an order may ever be.
 	 * 
-	 * @return the minimum total of order.
+	 * The getMinimumTotal method iterates through the ArrayList collection containing 'OrderLine' objects, 
+	 * and adds each of their minimum subtotal price together and returns a combined total cost.
+	 * 
+	 * @return Double - The total minimum price of the entire order.
 	 */
 	private double getMinimumTotal()
 	{
 		double sum = 0;
+		
 		for (OrderLine orderLine : orderLineList)
 		{
 			sum = sum + orderLine.getMinimumSubtotal();
 		}
+		
 		return sum;
 	}
 
 	
 	/**
-	 * Retrieves the unique order number for this order.
-	 * 
-	 * @return the order number
+	 * Retrieves the order number of this 'Order' object instance.
+	 *
+	 * Returns the value of the 'orderNo' field, which represents the uniquely identifiable 
+	 * order number of this specific order.
+	 *
+	 * @return Integer - The order number associated with this 'Order' object instance.
 	 */
 	public int getOrderNo()
 	{
