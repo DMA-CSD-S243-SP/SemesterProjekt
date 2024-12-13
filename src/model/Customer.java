@@ -27,18 +27,26 @@ public class Customer
 	
 	
 	/**
-	 * Constructor initializes the order with an empty list of orderList.
+	 * Constructs a Customer instance with an empty list of 'Order' objects.
+	 *
+	 * Initializes a new 'Customer' object containing an collection in the form of
+	 * an ArrayList of elements of the 'Order' type.
 	 */
 	public Customer()
 	{
 		this.orderList = new ArrayList<>();
 	}
-
+	
 	
 	/**
-	 * The getDiscount method retrieves the current discount value.
-	 * 
-	 * @return the current discount value as a double.
+	 * Retrieves the discount that the customer should receive.
+	 *
+	 * Returns the value of the 'discount' field, which represents the percentage 
+	 * amount of reduction in price this specific customer is entitled to for being 
+	 * a good individual customer, and thereby should should have this discount 
+	 * percentage applied to the products that they purchase.
+	 *
+	 * @return the value of the 'discount' field.
 	 */
 	public double getDiscount()
 	{
