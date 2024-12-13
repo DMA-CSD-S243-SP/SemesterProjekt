@@ -12,12 +12,12 @@ package model;
  * 
  * 
  * @author Anders Have & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 13/12/2024 - 08:52
  */
 public class CustomerCategory
 {
 	// Instance variables - Primitive Types
-	private boolean locked;
+	private boolean isLocked;
 	private double discount;
 	
 	// Instance variables - Reference Types
@@ -40,33 +40,40 @@ public class CustomerCategory
 	 */
 	public CustomerCategory(boolean isLocked, double discount, String description)
 	{
-		locked = isLocked;
+		this.isLocked = isLocked;
 		this.discount = discount;
 		this.description = description;
 	}
 
 	
 	/**
-	 * Retrieves if the category is locked.
+	 * Retrieves whether or not the category is locked.
 	 *
-	 * Returns the value of the 'locked' field, which represents if the category is
-	 * locked or not.
-	 *
-	 * @return if the category is locked or not
+	 * Returns the value of the "isLocked" field, which determines whether or not
+	 * this category is accessible and possible to add a customer to by every employee
+	 * in the company, or if it is only leaders.
+	 * 
+	 * @return true if the category is locked, else it returns false.
 	 */
 	public boolean isLocked()
 	{
-		return locked;
+		if(isLocked == true)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 
 	
 	/**
-	 * Retrieves the discount.
+	 * Retrieves the discount that this category of customers should receive.
 	 *
-	 * Returns the value of the 'discount' field, which represents the 'discount' of
-	 * the object associated with the instance.
+	 * Returns the value of the 'discount' field, which represents the percentage 
+	 * amount of reduction in price this specific category of customers should have
+	 * applied to the products that they purchase.
 	 *
-	 * @return the value of the discount field
+	 * @return the value of the 'discount' field
 	 */
 	public double getDiscount()
 	{
@@ -75,12 +82,13 @@ public class CustomerCategory
 
 	
 	/**
-	 * Retrieves the description.
+	 * Retrieves the description for the customer category.
 	 *
-	 * Returns the value of the 'description' field, which represents the
-	 * 'description' of the object associated with the instance.
+	 * Returns the 'description' of the customer category. The 'description' field
+	 * represents an elaborative and descriptive name for the specified type of 
+	 * customer objects that are associated with the instance.
 	 *
-	 * @return the value of the description field
+	 * @return a string containing the 'description' of the category.
 	 */
 	public String getDescription()
 	{
