@@ -25,16 +25,15 @@ public class SaleUI extends Option
 	final static String optionText = "Start Salg";
 	// The text used to request a phonenumber:
 	final static String phoneRequest = "Indtast kundens telefonnummer";
-	// The text that requests a product id or an exit code. Note the exit code follows right after this statement:
+	// The text that requests a product id or an exit code. Note the exit code
+	// follows right after this statement:
 	final static String productAndExitRequest = "Registrer produkt, eller slut order ved";
 	// The code that needs to be typed in to end a sale:
 	final static String exitCode = "n";
-	// Error message when a non valid number is given:
-	final static String invalidNumber = "Antallet er ikke gyldigt";
 	// Error message for invalid customer:
 	final static String customerNotFound = "Ingen kunde er registreret med det nummer";
 	// Error message for invalid product:
-	final static String productNotFound = "Intet produkt er registreret med det ID"; 
+	final static String productNotFound = "Intet produkt er registreret med det ID";
 
 	OrderController orderControl;
 
@@ -127,19 +126,9 @@ public class SaleUI extends Option
 			if (inputLine.equals("")) // Allows quick input of a single product, by hitting enter
 			{
 				quantity = 1;
-			}
-
-			else
+			} else
 			{
-				try
-				{
-					quantity = Integer.parseInt(inputLine);
-				}
-
-				catch (NumberFormatException exception) // Gets thrown if the String can't be converted to an int
-				{
-					System.out.println(invalidNumber);
-				}
+				quantity = InputHandler.getIntInput();
 			}
 
 		}
