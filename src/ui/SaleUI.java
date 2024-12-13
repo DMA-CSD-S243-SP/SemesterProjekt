@@ -142,18 +142,21 @@ public class SaleUI extends Option
 	 * 
 	 * @param productID
 	 * @param quantity
+	 * @return true if the product was succesfully entered.
 	 */
-	private void tryEnterProduct(String productID, int quantity)
+	private boolean tryEnterProduct(String productID, int quantity)
 	{
 		try
 		{
 			double total = orderControl.enterProduct(productID, quantity);
 			System.out.println("\n\nTotal: " + total);
+			return true;
 		}
 
 		catch (NullPointerException exception) // Gets thrown if productID hasn't been mapped to a Product.
 		{
 			System.out.println(productNotFound);
+			return false;
 		}
 	}
 }
