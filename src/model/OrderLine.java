@@ -3,10 +3,10 @@ package model;
 
 
 /**
- * Represent an order line containing a product and its quantity.
+ * Represent an order line containing a product and its respective quantity.
  *
  * @author Line Bertelsen & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 13/12/2024 - 11:11
  */
 public class OrderLine
 {
@@ -17,6 +17,9 @@ public class OrderLine
 	private Product product;
 
 	
+	/**
+	 * Constructs an 'OrderLine' object instance.
+	 */
 	public OrderLine()
 	{
 
@@ -25,6 +28,10 @@ public class OrderLine
 	
 	/**
 	 * The setQuantity method sets the quantity for this order line.
+	 * 
+	 * The setQuantity method sets the quantity for this 'OrderLine' object instance's
+	 * 'quantity' field, thereby specifying the amount of a 'Product' that is added
+	 * to this line of the order.
 	 * 
 	 * @param quantity of the product
 	 */
@@ -35,9 +42,11 @@ public class OrderLine
 
 	
 	/**
-	 * The setProduct method set the product for this order line.
+	 * Sets a 'Product' object to be stored within this instance of the 'OrderLine' object's
+	 * product field, thereby creating an association between this 'OrderLine' and the
+	 * 'product' object that is being pointed at in the memory.
 	 * 
-	 * @param product
+	 * @param Product - The product that is added to this 'Orderline' instance.
 	 */
 	public void setProduct(Product product)
 	{
@@ -46,21 +55,23 @@ public class OrderLine
 
 	
 	/**
-	 * The getSubTotal method calculates the subtotal based on the products price.
+	 * The getSubTotal method calculates the subtotal of the quantity multiplied 
+	 * by the product's price.
 	 * 
-	 * @return the subtotal of this order line.
+	 * @return double - The subtotal for this order line.
 	 */
 	public double getSubTotal()
 	{
 		return quantity * product.getPrice();
 	}
 
-	
+		
 	/**
 	 * The getMinimumSubtotal method calculates the minimum subtotal based on the
-	 * products minimum price.
+	 * products minimum price and returns the absolute minimum value of this line
+	 * of the order.
 	 * 
-	 * @return the minimum subtotal for this order line.
+	 * @return double - The minimum subtotal for this order line.
 	 */
 	public double getMinimumSubtotal()
 	{
