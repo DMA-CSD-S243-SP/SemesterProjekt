@@ -7,14 +7,13 @@ import java.util.Map;
 
 
 /**
- * Represents a Container Products that includes a hashmap of Products
+ * Represents a container that 'Product' objects can be stored within and make them
+ * easily accessible by using the 'Product' object's unique productID field's value
+ * as the key used for retrieving said 'Product' objects stored within the collection.
+ * The collection utilizes a HashMap for its collection.
  *
- * The CustomerContainer class is a container which holds both customers and
- * categories.
- * 
- * 
  * @author Anders Have & Christoffer Søndergaard
- * @version 12/12/2024 - 23:06
+ * @version 13/12/2024 - 10:24
  */
 public class ProductContainer
 {
@@ -38,12 +37,12 @@ public class ProductContainer
 
 	
 	/**
-	 * Retrieves the product
+	 * Retrieves the Product object that has a matching product ID.
 	 *
-	 * Returns the value which the key(productID) is associated with from the
-	 * HashMap productByID.
+	 * Returns the 'Product' object, which is stored within the HashMap collection
+	 * with the specified product ID as their associated key.
 	 *
-	 * @return the value which the key(productID) is associated with.
+	 * @return the 'Product' which is associated with the key.
 	 */
 	public static Product findProductByID(String productID)
 	{
