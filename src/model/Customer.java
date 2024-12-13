@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Represent a customer and what information it holds.
  *
  * @author Daniel Kryhlmand, Line Bertelsen & Christoffer Søndergaard
- * @version 12/12/2024 - 22:50
+ * @version 13/12/2024 - 09:08
  */
 public class Customer
 {
