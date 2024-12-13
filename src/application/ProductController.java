@@ -1,5 +1,7 @@
+//Packages
 package application;
 
+//Imports
 import model.Product;
 import model.ProductContainer;
 
